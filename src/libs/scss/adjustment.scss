@@ -1,0 +1,52 @@
+@mixin large {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin extraSmall {
+    @media screen and (max-width: 451px) {
+        @content;
+    }
+}
+
+@mixin customize($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+
+.container {
+    width: 1180px;
+    
+    margin: 0 auto;
+
+    @include customize(1230px) {
+        width: 1024px;
+    }
+
+    @include customize(1041px) {
+        width: 970px;
+    }
+
+    @include medium {
+        width: 750px;
+    }
+
+    @include small {
+        width: auto;
+    }
+}
