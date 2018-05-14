@@ -72,7 +72,7 @@ export default {
   .passion{
     height: 100vh;
     
-    background: url(../assets/only.png) center center no-repeat;
+    background: url('../assets/only.png') center center no-repeat;
     background-size: cover;
     padding: 20px 0  55px 0;
 

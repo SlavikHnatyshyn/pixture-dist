@@ -25,7 +25,7 @@ export default {
  @import '../libs/scss/adjustment';
 
 .maker--wrapp{
-  background: url(../assets/2.png) center center no-repeat;
+  background: url('../assets/2.png') center center no-repeat;
   background-size: cover;
   height: 617px;
   width: 100%;

@@ -268,7 +268,7 @@ export default {
 .card__img{
   width: 381px;
   height: 205px;
-  background: url(../assets/cardbg.png);
+  background: url('../assets/cardbg.png');
   background-size: cover;
   outline: none;
 }
