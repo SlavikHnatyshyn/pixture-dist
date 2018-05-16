@@ -188,16 +188,15 @@ export default {
           show: false,
           slickOptions: {
             
-           
+            
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 1,
             variableWidth:true,
-            
-            
+            autoplay: true,
+            autoplaySpeed: 2000,
            
-            
-            
+          
             prevArrow: 'none',
             
            
@@ -230,6 +229,7 @@ export default {
 <style lang="scss" scoped>
 
 @import  '../../node_modules/slick-carousel/slick/slick.scss';
+@import  '../../node_modules/slick-carousel/slick/slick-theme.scss';
 @import '../libs/scss/adjustment';
 
 

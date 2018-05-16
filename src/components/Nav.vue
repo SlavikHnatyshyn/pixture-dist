@@ -45,6 +45,8 @@
     </li>
   </ul>
 
+  
+
   </nav>
   
   
@@ -69,7 +71,7 @@
 
         $('body, html').animate({
             scrollTop: $offsetTop,
-        }, 500)
+        }, 1000)
   })
   
 
@@ -174,6 +176,8 @@ export default {
      width:100%;
      overflow: hidden;
    }
+
+
 
 
 
