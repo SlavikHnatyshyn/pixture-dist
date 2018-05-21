@@ -1,7 +1,7 @@
 <template>
-  <div class="modal">
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-  </div>
+  
+     <p class="modal__text">Successfully submitted</p>
+ 
 </template>
 
 <script>
@@ -10,6 +10,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.modal{
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  position: absolute;
+
+}
+
+.modal__text{
+  color: rgb(15, 129, 20);
+  margin: 0;
+  
+}
 
 </style>
