@@ -44,12 +44,23 @@
 
        </div>  <!-- ./card__comment -->
 
-       <button class="card__comment--add">
+       <button class="card__comment--add"
+       @click="onAddCommentClick1"
+       >
          <i class="material-icons">more_horiz</i>
        </button>
 
      </div> <!-- ./card__comment--wrapp -->
     
+     <div class="addComment" v-if="active">
+       <textarea  class="addComment--textarea" maxlength="150" name="" id="" cols="40" rows="5" placeholder="Add some comment"></textarea>
+       <button class="addComment--btn"
+       @click.prevent="addCommentBtnClick"
+       >Add</button>
+     </div>
+
+      <app-modal v-if="modal" />
+
     </div> <!-- ./card__content -->
    
    </div> <!-- ./card -->
@@ -91,12 +102,24 @@
 
        </div>  <!-- ./card__comment -->
 
-       <button class="card__comment--add">
+       <button class="card__comment--add"
+       @click="onAddCommentClick2"
+       >
          <i class="material-icons">more_horiz</i>
        </button>
 
      </div> <!-- ./card__comment--wrapp -->
     
+    <div class="addComment" v-if="show">
+       <textarea  class="addComment--textarea" maxlength="150" name="" id="" cols="40" rows="5" placeholder="Add some comment"></textarea>
+       <button class="addComment--btn"
+       @click.prevent="addCommentBtnClick1"
+       >Add</button>
+    </div>
+    
+     <app-modal v-if="modal1" />
+
+
     </div> <!-- ./card__content -->
    
    </div> <!-- ./card -->
@@ -148,6 +171,16 @@
 
      </div> <!-- ./card__comment--wrapp -->
     
+    <div class="addComment" v-if="invalid">
+       <textarea  class="addComment--textarea" maxlength="150" name="" id="" cols="40" rows="5" placeholder="Add some comment"></textarea>
+       <button class="addComment--btn"
+       @click.prevent="addCommentBtnClick2"
+       >Add</button>
+    </div>
+    
+     <app-modal v-if="modal2" />
+
+
     </div> <!-- ./card__content -->
    
    </div> <!-- ./card -->
@@ -161,7 +194,7 @@
    </slick>  
 
   
-  
+    
   
 
   
@@ -178,14 +211,19 @@
 
 
 import Slick from 'vue-slick';
-import AddComment from './AddComment.vue'
+import Modal from './Modal.vue'
 
 
 export default {
   
   
   data: () => ({
+          invalid: false,
+          active: false,
           show: false,
+          modal: false,
+          modal1:false,
+          modal2: false,
           slickOptions: {
             
             
@@ -193,7 +231,7 @@ export default {
             slidesToShow: 2,
             slidesToScroll: 1,
             variableWidth:true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2000,
            
           
@@ -206,16 +244,56 @@ export default {
   }),
   methods:{
     onAddCommentClick () {
-      this.show = true
+      this.invalid = !this.invalid
     },
 
+     onAddCommentClick1 () {
+      this.active = !this.active
+    },
+    
+    onAddCommentClick2 () {
+      this.show = !this.show
+    },
+
+    addCommentBtnClick () {
+      this.modal = true
+      
+     let getValue = document.querySelector('.addComment--textarea').value;
+     localStorage.setItem('Comment', getValue);
+
+     
+
+    },
+
+     addCommentBtnClick1 () {
+      this.modal1 = true
+
+      let getValue = document.querySelector('.addComment--textarea').value;
+      localStorage.setItem('Comment1', getValue);
+
+      
+    },
+
+    addCommentBtnClick2 () {
+      this.modal2 = true
+
+      let getValue = document.querySelector('.addComment--textarea').value;
+      localStorage.setItem('Comment2', getValue);
+
+     
+
+    
+    },
+
+    
+
+    
      
   },
 
    components: { 
     Slick,
-    appAddComment: AddComment,
-
+    appModal: Modal,
    
    },
 
@@ -373,6 +451,36 @@ export default {
   position: absolute;
   right: -6px;
   top: -3px;
+}
+
+
+.addComment{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top:50%;
+  
+}
+
+.addComment--textarea{
+ width: 369px;
+ outline: none;
+ resize: none;
+ padding: 5px;
+ 
+}
+
+.addComment--btn{
+  width: 100%;
+ 
+  background: #530649;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
 }
 
 
