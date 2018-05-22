@@ -154,7 +154,7 @@ export default {
     margin: 0;
     line-height: 25px;
 
-    @include extraSmall {
+    @include customize (505px) {
       width: 300px;
     }
    

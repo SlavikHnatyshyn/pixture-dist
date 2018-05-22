@@ -42,8 +42,12 @@ export default {
          transform: translateX(40%);
     }
 
-    @include extraSmall {
-         transform: translateX(8%);
+    @include customize (630px) {
+         transform: translateX(20%);
+    }
+
+    @include customize (376px){
+        transform: translateX(7%);
     }
    
 }

@@ -317,7 +317,8 @@ export default {
 
 .cards--wrapp{
   display: flex;
-  
+  padding-bottom: 55px;
+
   
   
 }
