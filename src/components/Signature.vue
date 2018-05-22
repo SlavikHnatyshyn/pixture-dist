@@ -27,7 +27,7 @@ export default {
     writing-mode: vertical-lr;
     position: absolute;
     left:23px;
-    top:40%;
+    margin-top: 300px;
 
     @include customize (1030px){
       left: 19px;
