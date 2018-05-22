@@ -64,23 +64,27 @@ export default {
   @import '../libs/scss/adjustment';
 
   .descr--wrapp{
-      padding-top: 83px;
+      
       display: flex;
       flex-flow: row wrap;
-      padding: 85px 0 0 161px;
+      padding: 50px 0 0 161px;
       
       margin:0 
       -webkit-linear-gradient(left,  #1e0624 21%,#110320 39%,#1e0624 82%); /* Chrome10-25,Safari5.1-6 */
       
       @include customize (1030px) {
-          padding: 0;
+          padding-left: 0;
           padding-bottom: 50px;
           justify-content: center;
 
       }
+
+      @include customize (590px) {
+          padding: 20px;
+      }
       
       @include extraSmall {
-          padding: 20px;
+          
           
       }
 
@@ -106,6 +110,10 @@ export default {
           
 
       }
+
+      @include customize (590px){
+          padding-right:0; 
+      }
   }
   
   .descr__2{
@@ -127,6 +135,10 @@ export default {
           
 
       }
+
+      @include customize (590px){
+          padding-right:0; 
+      }
   }
   .descr__3{
       color: #d6d6d6;
@@ -144,7 +156,10 @@ export default {
       @include extraSmall {
           display: none;
       }
-  
+       
+      @include customize (590px){
+          padding-right:0; 
+      }
   }
 
   .descr__date{

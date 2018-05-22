@@ -95,7 +95,7 @@ export default {
     height: 100vh;
     background: url(../assets/1-1.png) center center no-repeat;
     background-size: cover;
-    padding-bottom: 55px;
+    margin-bottom: 55px;
 
   @include customize (1030px){
     height: 800px;
@@ -106,7 +106,7 @@ export default {
   }
 
   @include customize (778px) {
-    height: 600px;
+    
   }
    
   
@@ -223,7 +223,7 @@ export default {
     margin: 0;
     line-height: 25px;
     
-    @include extraSmall {
+    @include customize (572px) {
       width: 300px;
     }
 

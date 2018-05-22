@@ -56,12 +56,20 @@ export default {
 
 @import '../libs/scss/adjustment';
 
+.features__wrapp{
+    margin: 0;
+    padding: 0;
+}
+
+
+
 .features__list{
-    padding:80px 0 0 150px;
+    padding:0 0 0 150px;
     display: flex;
     background: rgb(17,3,32);
     background: linear-gradient(90deg, rgba(17,3,32,1) 17%, rgba(21,1,36,1) 31%, rgba(17,3,32,1) 48%, rgba(21,1,37,1) 64%, rgba(17,3,32,1) 75%);
     flex-flow: row wrap;
+    
     
     @include small{
         padding-left:0;
@@ -71,9 +79,11 @@ export default {
       
     }
 
-    @include extraSmall {
-        padding-top: 20px;
+    @include customize (590px) {
+        padding-top: 0;
     }
+
+
     
 }
 

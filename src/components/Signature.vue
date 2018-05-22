@@ -33,7 +33,7 @@ export default {
       left: 19px;
     }
 
-    @include extraSmall {
+    @include customize (590px) {
       display: none;
     }
     

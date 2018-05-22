@@ -156,7 +156,7 @@ export default {
           justify-content: center;
       }
 
-      @include extraSmall {
+      @include customize (536px) {
           display: none;
       }
   }   
