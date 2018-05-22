@@ -93,7 +93,7 @@ export default {
   
   .hero{
     height: 100vh;
-    background: url('../assets/b3.png') center center no-repeat;
+    background: url(../assets/1-1.png) center center no-repeat;
     background-size: cover;
     padding-bottom: 55px;
 
@@ -103,6 +103,10 @@ export default {
 
   @include small {
     padding-bottom: 0;
+  }
+
+  @include customize (778px) {
+    height: 600px;
   }
    
   
