@@ -310,10 +310,14 @@ export default {
 @import  '../../node_modules/slick-carousel/slick/slick-theme.scss';
 @import '../libs/scss/adjustment';
 
+.cards__title{
 
+  padding-top: 50px;
+}
 
 .cards--wrapp{
   display: flex;
+  
   
   
 }

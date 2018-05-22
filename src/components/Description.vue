@@ -80,7 +80,8 @@ export default {
       }
       
       @include extraSmall {
-          padding-bottom: 20px;
+          padding: 20px;
+          
       }
 
 }

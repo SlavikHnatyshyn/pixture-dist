@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+Go here and start: https://slavikhnatyshyn.github.io/pixture-dist/
+
 ## Build Setup
 
 ``` bash

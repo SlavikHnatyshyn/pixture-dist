@@ -72,7 +72,7 @@ export default {
   .passion{
     height: 100vh;
     
-    background: url(../assets/only.png) center center no-repeat;
+    background: url(../assets/3-1.png) center center no-repeat;
     background-size: cover;
     padding: 20px 0  55px 0;
 
@@ -82,7 +82,10 @@ export default {
 
     @include extraSmall {
       padding-bottom: 0;
+           
     }
+
+   
 
    
   }
