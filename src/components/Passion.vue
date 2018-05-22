@@ -9,7 +9,9 @@
   <div class="passion__content container">
   
  
-  <span class="passion__title"></span>
+  <span class="passion__title">
+    <img src="../assets/only.png" alt="only your passion" class="passion__title--img">
+  </span>
   
 
     <!-- passion__descr--wrapp-->
@@ -40,7 +42,7 @@
 
   </div> <!-- ./passion__content -->
 
-   <app-signature/>
+   
   
   </section> <!-- ./passion -->
 
@@ -57,10 +59,7 @@ export default {
       }
     },
      
-    components:{
-       appSignature: Signature,
-    }  
-
+  
 
 }
 </script>
@@ -73,12 +72,20 @@ export default {
     height: 100vh;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     background: url('../assets/only.png') center center no-repeat;
 =======
     background: url(../assets/3-1.png) center center no-repeat;
 >>>>>>> master
+=======
+    background: url(../assets/5.png) center center no-repeat;
+>>>>>>> master
     background-size: cover;
     padding: 20px 0  55px 0;
+     
+    @include customize (1030px){
+    height: 800px;
+  }
 
     @include small {
       padding-top: 0;
@@ -89,10 +96,34 @@ export default {
            
     }
 
-   
-
-   
   }
+
+
+  .passion__title{
+    
+    background-size: cover; 
+    position: absolute;
+    margin-top:160px;
+    transform: translateX(40%);
+
+    @include customize (992px){
+      transform: translateX(13%);
+    } 
+
+    @include customize (764px){
+      transform: translateX(5%);
+    }
+
+    @include customize (710px) {
+      width: 100px;
+    }
+
+    @include customize (678px) {
+      display: none;
+    }
+  }
+
+ 
 
 
   .passion__descr--wrapp{
