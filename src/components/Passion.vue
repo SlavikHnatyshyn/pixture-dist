@@ -69,7 +69,7 @@ export default {
   @import '../libs/scss/adjustment';
   
   .passion{
-    height: 100vh;
+    height:100vh;
     
     background: url(../assets/5.png) center center no-repeat;
     background-size: cover;
