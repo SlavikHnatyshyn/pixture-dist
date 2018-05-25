@@ -2,9 +2,7 @@
   <div class="signature">
     <span class="signature__author">blaz robar</span>
     <span class="signature__words">paint the power</span>
-    <button class="signature__arrow">
-        <i class="material-icons">keyboard_arrow_down</i>
-    </button>
+   
   </div>
 </template>
 

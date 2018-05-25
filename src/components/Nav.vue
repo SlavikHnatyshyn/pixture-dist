@@ -109,18 +109,20 @@ export default {
 @import '../libs/scss/adjustment';
 
 .menu-btn{
-    padding: 43px 0 0 22px;
+    padding: 43px 0 0 22px !important;
     background: none;
     border: none;
     outline: none;
     color: #fff;
     cursor: pointer;
+    transform: translateX(0);
+    margin-top:0; 
    
     z-index: 999;
     
     @include customize (1030px){
       background: #140327;
-      padding: 22px;
+      padding: 22px !important;
     }
     
 }

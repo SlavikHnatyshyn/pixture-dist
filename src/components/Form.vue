@@ -21,7 +21,7 @@
     <button class="form__button" @click.prevent="onSubmitClick" >Submit</button>
   </form>
   
-
+   
   </div> <!-- ./form__wrapp -->
   
   
@@ -36,6 +36,7 @@ export default {
   
   data: () =>({
     invalid: false,
+    show:false,
     
 
   }),
@@ -54,6 +55,7 @@ export default {
      localStorage.setItem('formKey', getValue);
  
      setTimeout(this.invalid = false,3000);
+
     
     },
     
@@ -76,13 +78,16 @@ export default {
   
 
 .email-btn{
-    padding: 45px 50px 0 0;
+    padding: 45px 50px 0 0 !important;
     background: none;
     border: none;
     outline: none;
     color: #fff;
     margin: 0;
     cursor: pointer;
+    position: static;
+    transform: translateX(0);
+    margin-top: 0;
     
    @include customize (775px){
      display: none;
@@ -125,11 +130,13 @@ export default {
   outline: none;
   border:none;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 10px !important;
   width: 407px;
   cursor: pointer;
   color: #fff;
   background: #530649;
+  position: static;
+  transform: translateX(0);
 }
 
 .form__close-btn{
@@ -142,6 +149,7 @@ export default {
   outline: none;
   transform: translateY(-520%);
   right: 30px;
+  margin-top: 90px;
 }
 
 .form__close-btn > i {
