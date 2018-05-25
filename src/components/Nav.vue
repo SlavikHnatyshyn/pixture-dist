@@ -159,6 +159,8 @@ export default {
 
 .nav__link{
   color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .overlay{
