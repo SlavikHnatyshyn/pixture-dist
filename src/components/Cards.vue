@@ -272,6 +272,13 @@ export default {
 
      this.active = false;
      this.count++;
+
+    let self = this;
+      
+    setTimeout(function(){
+        self.modal = false;
+    }, 3000);
+
      
      
     },
@@ -288,7 +295,11 @@ export default {
       this.show = false;
       this.count1++;
 
+      let self = this;
       
+      setTimeout(function(){
+        self.modal1 = false;
+    }, 3000);
 
      
     },
@@ -301,6 +312,13 @@ export default {
       
       this.invalid = false;
       this.count2++;
+
+      let self = this;
+      
+      setTimeout(function(){
+        self.modal2 = false;
+    }, 3000);
+
     },
 
     
@@ -511,39 +529,13 @@ export default {
 }
 
 
-.fade-enter-active{
-  animation: bounce 1s;
-  animation: bounce-leave 3s;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
-
-.fade-leave-active{
- 
-}
-
-
-@keyframes bounce {
-  0%{
-    opacity:0;
-  }
-  
-  100%{
-    opacity: 1;
-
-  }
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
 }
 
 
-@keyframes bounce-leave {
-  0%{
-    opacity:1;
-  }
-  50%{
-    opacity:.5;
-  }
-  100%{
-    opacity: 0;
-
-  }
-}
 
 </style>
