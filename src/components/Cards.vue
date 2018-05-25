@@ -39,7 +39,7 @@
          <i class="material-icons">chat_bubble</i>
        </div>
        <span class="card__comment--descr">
-         374 comments
+        {{count}}
        </span>
 
        </div>  <!-- ./card__comment -->
@@ -58,9 +58,10 @@
        @click.prevent="addCommentBtnClick"
        >Add</button>
      </div>
-
+      
+      <transition name="fade">
       <app-modal v-if="modal" />
-
+      </transition>
     </div> <!-- ./card__content -->
    
    </div> <!-- ./card -->
@@ -97,7 +98,7 @@
          <i class="material-icons">chat_bubble</i>
        </div>
        <span class="card__comment--descr">
-         374 comments
+         {{count1}}
        </span>
 
        </div>  <!-- ./card__comment -->
@@ -117,8 +118,9 @@
        >Add</button>
     </div>
     
+    <transition name="fade">
      <app-modal v-if="modal1" />
-
+    </transition>
 
     </div> <!-- ./card__content -->
    
@@ -153,7 +155,7 @@
          <i class="material-icons">chat_bubble</i>
        </div>
        <span class="card__comment--descr">
-         374 comments
+        {{count2}}
        </span>
 
        
@@ -178,8 +180,9 @@
        >Add</button>
     </div>
     
+    <transition name="fade">
      <app-modal v-if="modal2" />
-
+    </transition>
 
     </div> <!-- ./card__content -->
    
@@ -211,6 +214,7 @@
 
 
 import Slick from 'vue-slick';
+
 import Modal from './Modal.vue'
 
 
@@ -224,6 +228,9 @@ export default {
           modal: false,
           modal1:false,
           modal2: false,
+          count:  374,
+          count1: 374,
+          count2: 374,
           slickOptions: {
             
             
@@ -231,11 +238,13 @@ export default {
             slidesToShow: 2,
             slidesToScroll: 1,
             variableWidth:true,
-            autoplay: false,
-            autoplaySpeed: 2000,
            
-          
+           
+            
             prevArrow: 'none',
+            
+            
+            
             
            
                 
@@ -257,21 +266,31 @@ export default {
 
     addCommentBtnClick () {
       this.modal = true
-      
+     
      let getValue = document.querySelector('.addComment--textarea').value;
      localStorage.setItem('Comment', getValue);
 
+     this.active = false;
+     this.count++;
      
-
+     
     },
 
      addCommentBtnClick1 () {
       this.modal1 = true
+       
+      
 
       let getValue = document.querySelector('.addComment--textarea').value;
       localStorage.setItem('Comment1', getValue);
+      
+          
+      this.show = false;
+      this.count1++;
 
       
+
+     
     },
 
     addCommentBtnClick2 () {
@@ -279,16 +298,13 @@ export default {
 
       let getValue = document.querySelector('.addComment--textarea').value;
       localStorage.setItem('Comment2', getValue);
-
-     
-
-    
+      
+      this.invalid = false;
+      this.count2++;
     },
 
     
-
-    
-     
+  
   },
 
    components: { 
@@ -423,8 +439,11 @@ export default {
   background: ebebeb;
   border: none;
   outline: none;
-  padding: 5px 24px 0 24px;
+  padding: 5px 24px 0 24px !important;
   cursor: pointer;
+  position: static;
+  transform: translateX(0);
+  margin-top: 0;
 }
 
 .card__comment--add > i{
@@ -486,7 +505,45 @@ export default {
   cursor: pointer;
   color: #fff;
   padding: 10px;
+  position: static;
+  transform: translateX(0);
+  margin-top: 0;
 }
 
+
+.fade-enter-active{
+  animation: bounce 1s;
+  animation: bounce-leave 3s;
+}
+
+.fade-leave-active{
+ 
+}
+
+
+@keyframes bounce {
+  0%{
+    opacity:0;
+  }
+  
+  100%{
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes bounce-leave {
+  0%{
+    opacity:1;
+  }
+  50%{
+    opacity:.5;
+  }
+  100%{
+    opacity: 0;
+
+  }
+}
 
 </style>

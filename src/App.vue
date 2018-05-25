@@ -83,7 +83,20 @@ export default {
      margin: 0;
      padding: 0;
    }
+   
+   button{
+     position: absolute;
+     background: transparent;
+     
+     margin-top: 179px;
+     outline: none;
+     cursor: pointer;
+     transform: translateX(2015%);
+     border: 25px solid transparent;	
+     border-left: 25px solid #eee;
+   }
 
+ 
 
 
    
