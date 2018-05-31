@@ -71,7 +71,8 @@
 
         $('body, html').animate({
             scrollTop: $offsetTop,
-        }, 1000)
+            
+        }, 6000);
   })
   
 
