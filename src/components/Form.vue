@@ -19,6 +19,11 @@
 
     </textarea>
     <button class="form__button" @click.prevent="onSubmitClick" >Submit</button>
+   
+    <transition name="fade">
+    <app-modal v-if="show"/>
+    </transition>
+
   </form>
   
    
@@ -54,7 +59,23 @@ export default {
      let getValue = document.querySelector('.form__textarea').value;
      localStorage.setItem('formKey', getValue);
  
-     setTimeout(this.invalid = false,3000);
+    let self = this;
+      
+    setTimeout(function(){
+        self.show = true;
+        
+    }, 2000);
+
+    if(self.show = true){
+      
+    setTimeout(function(){
+        self.invalid = false;
+        self.show = false;
+        
+    }, 4000);
+    }
+
+  
 
     
     },
@@ -137,24 +158,39 @@ export default {
   background: #530649;
   position: static;
   transform: translateX(0);
+  transition: .2s ease-in-out;
+}
+
+.form__button:hover,
+.form__button:active{
+  color: #530649;
+  background: #fff;
+  font-weight: 700;
 }
 
 .form__close-btn{
   z-index: 9999; 
-  position: fixed;
+  // position: fixed;
   cursor: pointer;
   background: #530649;
   border: none;
   color: #fff;
   outline: none;
-  transform: translateY(-520%);
+  transform: translateY(-820%);
   right: 30px;
-  margin-top: 90px;
+  margin-top: 140px !important;
 }
 
 .form__close-btn > i {
    font-size: 50px;
    
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .7s;
+}
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
 }
 
 
