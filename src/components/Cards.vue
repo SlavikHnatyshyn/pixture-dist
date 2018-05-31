@@ -79,7 +79,7 @@
     <!-- card__content -->
     <div class="card__content">
      
-     <h2 class="card__title">Bliss Texture</h2>
+     <h2 class="card__title">decayed</h2>
      <p class="card__descr">
       Lorem ipsum dolor sit amet, consectetur adipisicing 
       elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -136,7 +136,7 @@
     <!-- card__content -->
     <div class="card__content">
      
-     <h2 class="card__title">cayed</h2>
+     <h2 class="card__title">decayed</h2>
      <p class="card__descr">
       Lorem ipsum dolor sit amet, consectetur adipisicing 
       elit, sed do eiusmod tempor incididunt ut labore et dolore
